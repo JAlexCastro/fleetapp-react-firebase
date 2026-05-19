@@ -1,8 +1,5 @@
-// pages/Dashboard.jsx
+// src/pages/ActualizacionKMPage.jsx
 
-import { Link } from "react-router-dom";
-
-import CardVehiculo from "../components/CardVehiculo";
 import { useEffect, useState }
     from "react";
 
@@ -12,23 +9,24 @@ import {
 }
     from "firebase/firestore";
 
-import { db }
-    from "../services/firebase";
+import { db } from "../../services/firebase";
+
+import ActualizacionKM
+    from "../../components/ActualizacionKM";
+
 /**
  * =====================================================
- * PAGINA: Dashboard
+ * PAGINA: ActualizacionKMPage
  * =====================================================
  *
- * Muestra:
- * - Vehículos
- * - Estado mantenimiento
- * - Accesos rápidos
+ * Página encargada de:
+ * - Obtener vehículos Firestore
+ * - Mostrar componente actualización KM
  *
  * =====================================================
  */
 
-export default function Dashboard() {
-
+export default function ActualizacionKMPage() {
 
     /**
      * =====================================================
@@ -37,6 +35,14 @@ export default function Dashboard() {
      */
     const [trucks, setTrucks] =
         useState([]);
+
+    /**
+     * =====================================================
+     * LOADING
+     * =====================================================
+     */
+    const [loading, setLoading] =
+        useState(true);
 
     /**
      * =====================================================
@@ -58,10 +64,12 @@ export default function Dashboard() {
                      */
                     const querySnapshot =
                         await getDocs(
+
                             collection(
                                 db,
                                 "vehiculos"
                             )
+
                         );
 
                     /**
@@ -78,7 +86,9 @@ export default function Dashboard() {
                             })
                         );
 
-                    /** Guardar estado */
+                    /**
+                     * Guardar estado
+                     */
                     setTrucks(
                         vehiculos
                     );
@@ -90,6 +100,13 @@ export default function Dashboard() {
                         "Error cargando vehículos:",
                         error
                     );
+                }
+                finally {
+
+                    /**
+                     * Loading OFF
+                     */
+                    setLoading(false);
                 }
             };
 
@@ -108,78 +125,65 @@ export default function Dashboard() {
             {/* HEADER */}
             {/* ===================================================== */}
 
-            <div className="d-flex justify-content-between align-items-center mb-5">
+            <div className="mb-4">
 
-                <div>
+                <h1 className="fw-bold">
+                    🔧 Actualización KM
+                </h1>
 
-                    <h1 className="fw-bold">
-                        🚛 Dashboard
-                    </h1>
-
-                    <p className="text-muted mb-0">
-                        Control de mantenimiento flota
-                    </p>
-
-                </div>
-
-                {/* BOTONES ACCESO */}
-
-                <div className="d-flex gap-2">
-
-                    <Link
-                        to="/update"
-                        className="btn btn-warning"
-                    >
-                        🔧 Actualizar KM
-                    </Link>
-
-                    <Link
-                        to="/register"
-                        className="btn btn-success"
-                    >
-                        ➕ Nuevo Vehículo
-                    </Link>
-
-                    <Link
-                        to="/modificar_vehiculo"
-                        className="btn btn-success"
-                    >
-                        ➕ Modificar Vehículo
-                    </Link>
-
-                </div>
+                <p className="text-muted">
+                    Registro y control de kilometraje
+                </p>
 
             </div>
 
             {/* ===================================================== */}
-            {/* GRID VEHICULOS */}
+            {/* LOADING */}
             {/* ===================================================== */}
 
-            <div className="row">
+            {
+                loading && (
 
-                {
-                    trucks.map((truck) => (
+                    <div className="alert alert-info">
 
-                        <div
-                            key={truck.id}
-                            className="col-12 col-md-6 mb-4"
-                        >
+                        Cargando vehículos...
 
-                            <CardVehiculo
-                                vehiculo={truck.vehiculo}
-                                patente={truck.patente}
-                                kmActual={truck.kmActual}
-                                kmMantenimiento={truck.kmMantenimiento}
-                                fechaUltimaToma={truck.fechaUltimaToma}
-                                conductor={truck.conductor}
-                            />
+                    </div>
 
-                        </div>
+                )
+            }
 
-                    ))
-                }
+            {/* ===================================================== */}
+            {/* SIN VEHICULOS */}
+            {/* ===================================================== */}
 
-            </div>
+            {
+                !loading &&
+                trucks.length === 0 && (
+
+                    <div className="alert alert-warning">
+
+                        No existen vehículos registrados
+
+                    </div>
+
+                )
+            }
+
+            {/* ===================================================== */}
+            {/* COMPONENTE */}
+            {/* ===================================================== */}
+
+            {
+                !loading &&
+                trucks.length > 0 && (
+
+                    <ActualizacionKM
+                        trucks={trucks}
+                    />
+
+                )
+            }
 
         </div>
 

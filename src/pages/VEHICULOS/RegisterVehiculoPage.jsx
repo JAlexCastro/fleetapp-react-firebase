@@ -1,5 +1,5 @@
 import NuevoVehiculo
-    from "../components/NuevoVehiculo";
+    from "../../components/VEHICULOS/NuevoVehiculo";
 
 export default function RegisterVehiculoPage() {
 

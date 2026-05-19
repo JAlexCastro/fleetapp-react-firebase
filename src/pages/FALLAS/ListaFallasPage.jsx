@@ -10,10 +10,9 @@ import {
     from "firebase/firestore";
 
 import { db }
-    from "../services/firebase";
+    from "../../services/firebase";
 
-import CardFalla
-    from "../components/CardFalla";
+import CardFalla from "../../components/FALLAS/CardFalla";
 
 /**
  * =====================================================

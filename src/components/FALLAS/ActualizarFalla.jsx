@@ -11,7 +11,7 @@ import {
 } from "firebase/firestore";
 
 import { db }
-    from "../services/firebase";
+    from "../../services/firebase";
 
 /**
  * =====================================================

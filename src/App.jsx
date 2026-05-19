@@ -12,27 +12,27 @@ import Navbar
   from "./components/Navbar";
 
 import Dashboard
-  from "./pages/Dashboard";
+  from "./pages/KILOMETRAJES/Dashboard";
 
 import LoginPage
   from "./pages/LoginPage";
 
 import RegisterVehiculoPage
-  from "./pages/RegisterVehiculoPage";
+  from "./pages/VEHICULOS/RegisterVehiculoPage";
 
 import ActualizacionKMPage
-  from "./pages/ActualizacionKMPage";
+  from "./pages/KILOMETRAJES/ActualizacionKMPage";
 
 import RegistroFallaPage
-  from "./pages/RegistroFallaPage";
+  from "./pages/FALLAS/RegistroFallaPage";
 
 import ListaFallasPage
-  from "./pages/ListaFallasPage";
+  from "./pages/FALLAS/ListaFallasPage";
 
 import DetalleFallaPage
-  from "./pages/DetalleFallaPage";
+  from "./pages/FALLAS/DetalleFallaPage";
 
-import ModificarVehiculo from "./components/ModificarVehiculo"
+import ModificarVehiculo from "./components/VEHICULOS/ModificarVehiculo"
 
 // App.jsx
 

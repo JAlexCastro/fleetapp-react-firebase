@@ -1,7 +1,7 @@
 // src/components/NuevoVehiculo.jsx
 
 import { useState } from "react";
-import { db } from "../services/firebase";
+import { db } from "../../services/firebase"
 
 import {
     collection,

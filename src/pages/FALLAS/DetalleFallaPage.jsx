@@ -20,13 +20,13 @@ import {
     from "firebase/firestore";
 
 import { db }
-    from "../services/firebase";
+    from "../../services/firebase";
 
 import HistorialFalla
-    from "../components/HistorialFalla";
+    from "../../components/FALLAS/HistorialFalla";
 
 import ActualizarFalla
-    from "../components/ActualizarFalla";
+    from "../../components/FALLAS/ActualizarFalla";
 
 /**
  * =====================================================

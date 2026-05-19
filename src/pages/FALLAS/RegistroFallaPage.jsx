@@ -9,14 +9,13 @@ import {
 }
     from "firebase/firestore";
 
-import { db }
-    from "../services/firebase";
+import { db } from "../../services/firebase";
 
 import RegistroFalla
-    from "../components/RegistroFalla";
+    from "../../components/FALLAS/RegistroFalla";
 
 import CardFalla
-    from "../components/CardFalla";
+    from "../../components/FALLAS/CardFalla";
 
 /**
  * =====================================================

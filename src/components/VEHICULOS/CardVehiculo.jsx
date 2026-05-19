@@ -38,7 +38,7 @@ export default function CardVehiculo({
         badgeColor = "danger";
 
     }
-    else if (kmRestante <= 500) {
+    else if (kmRestante <= 2000) {
 
         estado = "POR VENCER";
         badgeColor = "warning";

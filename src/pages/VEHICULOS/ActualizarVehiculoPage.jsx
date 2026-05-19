@@ -1,7 +1,7 @@
 // src/pages/ActualizarVehiculoPage.jsx
 
 import ModificarVehiculo
-    from "../components/ModificarVehiculo";
+    from "../../components/VEHICULOS/ModificarVehiculo";
 
 /**
  * =====================================================
