@@ -32,6 +32,12 @@ import ListaFallasPage
 import DetalleFallaPage
   from "./pages/DetalleFallaPage";
 
+import ModificarVehiculo from "./components/ModificarVehiculo"
+
+// App.jsx
+
+import RevisionTecnicaPage from "./pages/RT/RevisionTecnicaPage";
+
 export default function App() {
 
   return (
@@ -72,6 +78,13 @@ export default function App() {
               />
 
               <Route
+                path="/modificar_vehiculo"
+                element={
+                  <ModificarVehiculo />
+                }
+              />
+
+              <Route
                 path="/update"
                 element={
                   <ActualizacionKMPage />
@@ -97,6 +110,10 @@ export default function App() {
                 element={
                   <DetalleFallaPage />
                 }
+              />
+              <Route
+                path="/revisiones"
+                element={<RevisionTecnicaPage />}
               />
 
             </Routes>

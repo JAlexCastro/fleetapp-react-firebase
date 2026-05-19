@@ -41,21 +41,7 @@ export default function Navbar() {
                     >
                         Dashboard
                     </Link>
-                    {/* OCULTAR 
-                    <Link
-                        to="/update"
-                        className="btn btn-warning btn-sm"
-                    >
-                        Actualizar KM
-                    </Link>
 
-                    <Link
-                        to="/register"
-                        className="btn btn-success btn-sm"
-                    >
-                        Registrar Vehículo
-                    </Link>
-                */}
                     <Link
                         to="/fallas"
                         className="btn btn-warning btn-sm"
@@ -67,6 +53,13 @@ export default function Navbar() {
                         className="btn btn-danger btn-sm"
                     >
                         Registro De Fallas
+                    </Link>
+
+                    <Link
+                        to="/revisiones"
+                        className="btn btn-primary btn-sm"
+                    >
+                        Rev. Tecnica
                     </Link>
 
 

@@ -140,6 +140,13 @@ export default function Dashboard() {
                         ➕ Nuevo Vehículo
                     </Link>
 
+                    <Link
+                        to="/modificar_vehiculo"
+                        className="btn btn-success"
+                    >
+                        ➕ Modificar Vehículo
+                    </Link>
+
                 </div>
 
             </div>
