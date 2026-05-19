@@ -108,44 +108,104 @@ export default function Dashboard() {
             {/* HEADER */}
             {/* ===================================================== */}
 
-            <div className="d-flex justify-content-between align-items-center mb-5">
+            <div className="card border-0 shadow-sm mb-5">
 
-                <div>
+                <div className="card-body p-4">
 
-                    <h1 className="fw-bold">
-                        🚛 Dashboard
-                    </h1>
+                    <div className="row align-items-center">
 
-                    <p className="text-muted mb-0">
-                        Control de mantenimiento flota
-                    </p>
+                        {/* ===================================================== */}
+                        {/* TITULO */}
+                        {/* ===================================================== */}
 
-                </div>
+                        <div className="col-12 col-lg-5 mb-4 mb-lg-0">
 
-                {/* BOTONES ACCESO */}
+                            <h1 className="fw-bold mb-2">
+                                🚛 Dashboard
+                            </h1>
 
-                <div className="d-flex gap-2">
+                            <p className="text-muted mb-0">
+                                Control y gestión mantenimiento flota
+                            </p>
 
-                    <Link
-                        to="/update"
-                        className="btn btn-warning"
-                    >
-                        🔧 Actualizar KM
-                    </Link>
+                        </div>
 
-                    <Link
-                        to="/register"
-                        className="btn btn-success"
-                    >
-                        ➕ Nuevo Vehículo
-                    </Link>
+                        {/* ===================================================== */}
+                        {/* BOTONES */}
+                        {/* ===================================================== */}
 
-                    <Link
-                        to="/modificar_vehiculo"
-                        className="btn btn-success"
-                    >
-                        ➕ Modificar Vehículo
-                    </Link>
+                        <div className="col-12 col-lg-7">
+
+                            <div className="row g-3">
+
+                                {/* ACTUALIZAR KM */}
+
+                                <div className="col-12 col-md-4">
+
+                                    <Link
+                                        to="/update"
+                                        className="btn btn-warning w-100 py-3 shadow-sm"
+                                    >
+
+                                        <div className="fw-semibold">
+                                            🔧 Actualizar
+                                        </div>
+
+                                        <small>
+                                            Kilometraje
+                                        </small>
+
+                                    </Link>
+
+                                </div>
+
+                                {/* NUEVO VEHICULO */}
+
+                                <div className="col-12 col-md-4">
+
+                                    <Link
+                                        to="/register"
+                                        className="btn btn-success w-100 py-3 shadow-sm"
+                                    >
+
+                                        <div className="fw-semibold">
+                                            ➕ Registrar
+                                        </div>
+
+                                        <small>
+                                            Nuevo Vehículo
+                                        </small>
+
+                                    </Link>
+
+                                </div>
+
+                                {/* MODIFICAR */}
+
+                                <div className="col-12 col-md-4">
+
+                                    <Link
+                                        to="/modificar_vehiculo"
+                                        className="btn btn-primary w-100 py-3 shadow-sm"
+                                    >
+
+                                        <div className="fw-semibold">
+                                            🚛 Modificar
+                                        </div>
+
+                                        <small>
+                                            Datos Vehículo
+                                        </small>
+
+                                    </Link>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 

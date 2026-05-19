@@ -53,98 +53,177 @@ export default function CardVehiculo({
 
     return (
 
-        <div className="card shadow-sm border-0 h-100">
+        <div
+            className="
+        card
+        border-0
+        shadow-sm
+        h-100
+        overflow-hidden
+    "
+            style={{
+                background:
+                    "linear-gradient(135deg, #ffffff 0%, #f8fafc 100%)",
+                borderRadius: "18px",
+            }}
+        >
 
-            <div className="card-body p-4">
+            {/* HEADER COLOR */}
 
-                {/* HEADER */}
+            <div
+                className="p-3"
+                style={{
+                    background:
+                        "linear-gradient(135deg, #1e293b 0%, #334155 100%)",
+                }}
+            >
 
-                <div className="d-flex justify-content-between align-items-start mb-3">
+                <div className="d-flex justify-content-between align-items-start">
 
                     <div>
 
-                        <h4 className="fw-bold mb-1">
+                        <h4 className="fw-bold text-white mb-1">
                             🚛 {vehiculo}
                         </h4>
 
-                        <p className="text-muted mb-0">
+                        <p className="text-light mb-0">
                             {patente}
                         </p>
 
                     </div>
 
                     <span
-                        className={`badge bg-${badgeColor}`}
+                        className={`badge bg-${badgeColor} px-3 py-2`}
                     >
                         {estado}
                     </span>
 
                 </div>
 
+            </div>
+
+            {/* BODY */}
+
+            <div className="card-body p-4">
+
                 {/* INFORMACION */}
 
-                <div className="row">
+                <div className="row g-3">
 
-                    <div className="col-6 mb-3">
-
-                        <small className="text-muted d-block">
-                            KM Actual
-                        </small>
-
-                        <span className="fw-semibold">
-                            {kmActual.toLocaleString()}
-                        </span>
-
-                    </div>
-
-                    <div className="col-6 mb-3">
-
-                        <small className="text-muted d-block">
-                            Mantención
-                        </small>
-
-                        <span className="fw-semibold">
-                            {kmMantenimiento.toLocaleString()}
-                        </span>
-
-                    </div>
+                    {/* KM ACTUAL */}
 
                     <div className="col-6">
 
-                        <small className="text-muted d-block">
-                            KM Restante
-                        </small>
+                        <div
+                            className="p-3 rounded-4 h-100"
+                            style={{
+                                background: "#f1f5f9",
+                            }}
+                        >
 
-                        <span className="fw-semibold">
-                            {kmRestante.toLocaleString()}
-                        </span>
+                            <small className="text-muted d-block mb-1">
+                                KM Actual
+                            </small>
+
+                            <span className="fw-bold fs-5">
+                                {kmActual.toLocaleString()}
+                            </span>
+
+                        </div>
 
                     </div>
 
+                    {/* MANTENCION */}
+
                     <div className="col-6">
 
-                        <small className="text-muted d-block">
-                            Conductor
-                        </small>
+                        <div
+                            className="p-3 rounded-4 h-100"
+                            style={{
+                                background: "#fef3c7",
+                            }}
+                        >
 
-                        <span className="fw-semibold">
-                            {conductor}
-                        </span>
+                            <small className="text-muted d-block mb-1">
+                                Mantención
+                            </small>
+
+                            <span className="fw-bold fs-5">
+                                {kmMantenimiento.toLocaleString()}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    {/* KM RESTANTE */}
+
+                    <div className="col-6">
+
+                        <div
+                            className="p-3 rounded-4 h-100"
+                            style={{
+                                background: "#dcfce7",
+                            }}
+                        >
+
+                            <small className="text-muted d-block mb-1">
+                                KM Restante
+                            </small>
+
+                            <span className="fw-bold fs-5">
+                                {kmRestante.toLocaleString()}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    {/* CONDUCTOR */}
+
+                    <div className="col-6">
+
+                        <div
+                            className="p-3 rounded-4 h-100"
+                            style={{
+                                background: "#e0f2fe",
+                            }}
+                        >
+
+                            <small className="text-muted d-block mb-1">
+                                Conductor
+                            </small>
+
+                            <span className="fw-bold">
+                                {conductor}
+                            </span>
+
+                        </div>
 
                     </div>
 
                 </div>
 
-                <hr />
+            </div>
 
-                {/* FOOTER */}
+            {/* FOOTER */}
+
+            <div
+                className="px-4 py-3 border-top"
+                style={{
+                    background: "#f8fafc",
+                }}
+            >
 
                 <div className="d-flex justify-content-between align-items-center">
 
-                    <small className="text-muted">
-                        📅 {fechaUltimaToma}
+                    <small className="text-muted fw-semibold">
+                        📅 Última actualización
                     </small>
 
+                    <small className="fw-bold text-secondary">
+                        {fechaUltimaToma}
+                    </small>
 
                 </div>
 
